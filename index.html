@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlyn | Stand Out & Sell More</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- BRAND PLACEHOLDERS - Replace with actual Chatlyn brand values --- */
+        :root {
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Chatlyn Primary Color - Placeholder */
+            --color-primary: #14B8A6; /* Example: A modern teal */
+            /* Chatlyn Secondary Color (e.g., for accents or darker shades) - Placeholder */
+            --color-secondary: #0D9488; /* Example: Darker teal */
+            --color-accent: #F59E0B;    /* Example: Amber for highlights if needed */
+            
+            --color-text-dark: #1F2937; /* Dark gray for headings */
+            --color-text-body: #374151; /* Slightly lighter gray for body text */
+            --color-text-light: #6B7280; /* Lighter gray for subtext, captions */
+            --color-background-light: #F9FAFB; /* Very light gray for section backgrounds */
+            --color-background-white: #FFFFFF;
+            --color-border: #E5E7EB; /* Light border color */
+        }
+        /* --- End of BRAND PLACEHOLDERS --- */
+
+        /* --- General Styles --- */
+        body {
+            margin: 0;
+            font-family: var(--font-primary);
+            color: var(--color-text-body);
+            line-height: 1.6;
+            background-color: var(--color-background-white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-text-dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8rem; /* Responsive adjustments may be needed */
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary); /* Using primary color for subheadings within sections */
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--color-primary);
+            color: var(--color-background-white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-background-white);
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero {
+            background-color: var(--color-background-light); /* Or a gradient / image */
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-highlight {
+            background-color: var(--color-background-light);
+        }
+
+        .section-title { /* For centered titles if not h2 */
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--color-text-dark);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .feature-item, .testimonial-card, .faq-item, .step-item {
+            background-color: var(--color-background-white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--color-border);
+        }
+        
+        .feature-item h3 {
+             margin-top: 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--color-primary);
+            padding-left: 15px;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            color: var(--color-text-dark);
+            text-align: right;
+        }
+
+        /* Testimonials */
+        .testimonials {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+             gap: 20px;
+        }
+        .testimonial-card .quote {
+            font-size: 1rem;
+        }
+
+
+        /* Stats / Highlights */
+        .stat-highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-primary); /* Or accent color */
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Steps */
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            text-align: center;
+        }
+        .step-item {
+             flex: 1;
+        }
+        .step-number {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item h3 { /* Question */
+            font-size: 1.2rem;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background-color: var(--color-secondary); /* Darker shade or contrasting color */
+            color: var(--color-background-white);
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .final-cta h2 {
+            color: var(--color-background-white);
+            margin-bottom: 1rem;
+        }
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .final-cta .btn {
+             background-color: var(--color-accent); /* Example: Amber for standout CTA */
+             color: var(--color-text-dark); /* Or white if contrast is good */
+        }
+        .final-cta .btn:hover {
+            background-color: #FBBF24; /* Darker amber */
+        }
+        .offer-text {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer (simple) */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--color-text-dark);
+            color: var(--color-background-light);
+            font-size: 0.9rem;
+        }
+        footer p { margin-bottom: 0;}
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-3 { margin-bottom: 3rem; }
+
+        /* Add media queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .hero { padding: 60px 20px; }
+            .steps-container { flex-direction: column; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>STAND OUT & SELL MORE WITH EVERY GUEST CONVERSATION</h1>
+            <p>Transform Every Inquiry Into Revenue—No Matter Where It Starts</p>
+            <a href="#book-demo" class="btn">BOOK A DEMO</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The Communication Challenge Holding Your Hotel Back</h2>
+            <p>Your competitors' generic responses, missed messages, and disconnected systems are costing them guests—and opportunities.</p>
+            <p>While they make guests wait hours for answers about your best rooms or struggle to coordinate between front desk emails and WhatsApp inquiries, something crucial gets lost: the personal touch that transforms first-time visitors into lifelong patrons.</p>
+            <p><strong>chatlyn unifies every guest conversation into one intelligent system</strong> that responds instantly in any language, across any channel, with knowledge specific to your property—turning communication from a burden into your strongest competitive advantage.</p>
+        </div>
+    </section>
+
+    <section class="section section-highlight">
+        <div class="container">
+            <h2 class="section-title">ELEVATE EVERY STAY, MAXIMIZE EVERY OPPORTUNITY</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Turn Inquiry Chaos Into 5-Star Reviews</h3>
+                    <h4>GUEST-JOURNEY AUTOMATION & OMNICHANNEL INBOX</h4>
+                    <p>Stop juggling between booking engine messages, emails, SMS, WhatsApp and missed calls. chatlyn brings every guest conversation into one seamless inbox for your team, with AI handling routine questions 24/7. Set up perfectly timed, personalized messages that guide guests from booking confirmation to post-stay thank you.</p>
+                    <p class="quote">"Our review scores increased by 22% within 90 days—guests consistently mention our 'incredible responsiveness' as a highlight of their stay."</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Transform Basic Bookings Into Premium Experiences</h3>
+                    <h4>AI-POWERED UPSELLING & ANCILLARY REVENUE</h4>
+                    <p>Automatically offer the right upgrades at the perfect moment—room enhancements, late checkout, dining reservations, or spa treatments—with secure in-conversation payments. chatlyn learns which offers resonate with different guest segments and optimizes timing for maximum conversion.</p>
+                    <p class="stat-highlight">+27% increase in ancillary revenue for hotels in the first 60 days</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Speak Your Guests' Language—All of Them</h3>
+                    <h4>CUSTOM-TRAINED AI & MULTILINGUAL SUPPORT</h4>
+                    <p>chatlyn integrates with your PMS and learns your specific room types, amenities, policies, and local attractions. Answer questions accurately in over 100 languages, even with typos or slang, providing instant responses that feel truly personalized—whether about your pet policy, parking options, or that hidden local coffee shop your guests love discovering.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Never Miss Another Opportunity to Impress</h3>
+                    <h4>VOICE & PHONE SUPPORT</h4>
+                    <p>Not every guest messages—chatlyn answers calls too, handling routine inquiries while intelligently routing complex questions to the right team member. Your phone becomes a revenue generator instead of a distraction, with complete conversation history preserved across all channels.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Build Loyalty That Lasts Beyond the Stay</h3>
+                    <h4>PERSONALIZED EXPERIENCES & FOLLOW-UP</h4>
+                    <p>Turn first-time guests into devoted regulars with customized recommendations, special occasion remembrance, and perfectly timed re-booking incentives. chatlyn's engine captures preferences and creates moments of delight that guests can't help but share.</p>
+                    <p class="stat-highlight">84% of chatlyn hotels see increased direct booking rates within the first year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">TRUSTED BY 650+ INDEPENDENT HOTELS & BOUTIQUE GROUPS</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="quote">"As a 5-property collection, we couldn't afford dedicated staff at each location for guest communications. chatlyn gives us enterprise-level service capacity with our existing team. Our guests think we've doubled our staff—we've actually reduced communication costs by 40%."</p>
+                    <p class="quote-author">— Maria Sanchez, Operations Director, Harbour View Hotel Group</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"The difference between us and the big chain hotel down the street? Their guests wait on hold. Mine get instant answers at 2 AM about local restaurants, then wake up to a perfectly timed text about our breakfast special—with a 68% conversion rate. That's chatlyn."</p>
+                    <p class="quote-author">— James Chen, Owner, The Westlake Boutique Hotel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-highlight">
+        <div class="container">
+            <h2 class="section-title">GET STARTED IN THREE SIMPLE STEPS</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Connect Your Systems</h3>
+                    <p>Quick integration with your PMS and booking engine (15+ platforms supported)</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Customize Your Experience</h3>
+                    <p>We'll help train chatlyn on your unique offerings and guest communication style</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Go Live Across All Channels</h3>
+                    <p>Be up and running within 48 hours with full team training included</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How accurate is the AI across different languages?</h3>
+                    <p>chatlyn's language processing achieves 98.7% accuracy across major languages and 95%+ in over 100 languages total. The system gets smarter with every interaction, and any unusual queries it can't handle are seamlessly escalated to your team.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How difficult is the integration with our existing systems?</h3>
+                    <p>We offer pre-built connectors for all major hotel PMS systems including Opera, Mews, Clock, Cloudbeds, and 15+ others. Most hotels are fully integrated within hours, not days, with dedicated implementation support included.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What about data privacy and security?</h3>
+                    <p>chatlyn is fully GDPR compliant with SOC 2 Type II certification. Guest data remains your property and is never used to train general AI models. All payment processing meets PCI DSS requirements with end-to-end encryption.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will this reduce our staffing needs?</h3>
+                    <p>Rather than replacing staff, chatlyn empowers your existing team to focus on high-value guest interactions while eliminating repetitive tasks. Most hotels report being able to handle 3-4× more guest communications without adding headcount.</p>
+                </div>
+                 <div class="faq-item">
+                    <h3>How is pricing structured?</h3>
+                    <p>Pricing scales with your property size, starting at $7 per room per month with all features included. Volume discounts apply for multi-property groups, with no hidden fees or usage charges.</p>
+                </div>
+                 <div class="faq-item">
+                    <h3>Can we customize the AI's personality to match our brand voice?</h3>
+                    <p>Absolutely. During onboarding, we'll capture your unique brand voice and communication style. chatlyn will consistently represent your hotel's personality—whether that's warm and casual or refined and formal.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do guests know they're talking to AI?</h3>
+                    <p>This is your choice. chatlyn can identify itself as an AI assistant or seamlessly represent your brand without explicit disclosure. Either way, escalation to human staff is automatic for complex situations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>START YOUR FREE 14-DAY TRIAL TODAY</h2>
+            <p>NO CREDIT CARD REQUIRED</p>
+            <a href="#start-trial" class="btn">START FREE TRIAL</a>
+            <p class="offer-text">Limited Time Offer: Sign up this month and receive a complimentary strategy session with our hospitality revenue optimization specialist ($1,500 value).</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="max-width: 700px;">
+            <p class="quote" style="font-size: 1.2rem; text-align:center; border-left: none;">"chatlyn paid for itself in the first month through room upgrades alone. Three months later, we've increased RevPAR by 18% while our competitors are still struggling."</p>
+            </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Chatlyn. All rights reserved. (Example Footer)</p>
+            </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
