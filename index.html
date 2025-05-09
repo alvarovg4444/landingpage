@@ -2,426 +2,743 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatlyn | Stand Out & Sell More</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chatlyn: The Parrot Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* --- BRAND PLACEHOLDERS - Replace with actual Chatlyn brand values --- */
-        :root {
-            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            /* Chatlyn Primary Color - Placeholder */
-            --color-primary: #14B8A6; /* Example: A modern teal */
-            /* Chatlyn Secondary Color (e.g., for accents or darker shades) - Placeholder */
-            --color-secondary: #0D9488; /* Example: Darker teal */
-            --color-accent: #F59E0B;    /* Example: Amber for highlights if needed */
-            
-            --color-text-dark: #1F2937; /* Dark gray for headings */
-            --color-text-body: #374151; /* Slightly lighter gray for body text */
-            --color-text-light: #6B7280; /* Lighter gray for subtext, captions */
-            --color-background-light: #F9FAFB; /* Very light gray for section backgrounds */
-            --color-background-white: #FFFFFF;
-            --color-border: #E5E7EB; /* Light border color */
-        }
-        /* --- End of BRAND PLACEHOLDERS --- */
-
-        /* --- General Styles --- */
         body {
-            margin: 0;
-            font-family: var(--font-primary);
-            color: var(--color-text-body);
-            line-height: 1.6;
-            background-color: var(--color-background-white);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        h1, h2, h3 {
-            color: var(--color-text-dark);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        h1 {
-            font-size: 2.8rem; /* Responsive adjustments may be needed */
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: var(--color-primary); /* Using primary color for subheadings within sections */
-            margin-bottom: 0.75rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--color-primary);
-            color: var(--color-background-white);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--color-secondary);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--color-primary);
-            color: var(--color-background-white);
-        }
-
-        /* --- Header / Hero Section --- */
-        .hero {
-            background-color: var(--color-background-light); /* Or a gradient / image */
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--color-text-light);
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-        }
-
-        /* --- Section Styling --- */
-        .section {
-            padding: 60px 0;
-        }
-        
-        .section-highlight {
-            background-color: var(--color-background-light);
-        }
-
-        .section-title { /* For centered titles if not h2 */
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            color: var(--color-text-dark);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-
-        .feature-item, .testimonial-card, .faq-item, .step-item {
-            background-color: var(--color-background-white);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid var(--color-border);
-        }
-        
-        .feature-item h3 {
-             margin-top: 0;
-        }
-
-        .quote {
-            font-style: italic;
-            color: var(--color-text-light);
-            margin-bottom: 0.5rem;
-            border-left: 3px solid var(--color-primary);
-            padding-left: 15px;
-        }
-        
-        .quote-author {
-            font-weight: 600;
-            color: var(--color-text-dark);
-            text-align: right;
-        }
-
-        /* Testimonials */
-        .testimonials {
-             display: grid;
-             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-             gap: 20px;
-        }
-        .testimonial-card .quote {
-            font-size: 1rem;
-        }
-
-
-        /* Stats / Highlights */
-        .stat-highlight {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--color-primary); /* Or accent color */
-            display: block;
-            margin-top: 10px;
-        }
-
-        /* Steps */
-        .steps-container {
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: -webkit-fill-available; 
+            background-color: #D5469D; /* New background color */
+            margin: 0;
+            padding: 10px; /* Add some padding to prevent elements touching edges */
+            font-family: 'Press Start 2P', cursive;
+            color: white; /* Default text color to white */
+            overflow-x: hidden; /* Prevent horizontal scroll on small screens */
         }
-        .step-item {
-             flex: 1;
-        }
-        .step-number {
-            display: inline-block;
-            background-color: var(--color-primary);
+        .game-title {
+            font-size: clamp(20px, 6vw, 28px); /* Responsive font size */
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            line-height: 40px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* FAQ */
-        .faq-item {
+            text-align: center;
             margin-bottom: 15px;
         }
-        .faq-item h3 { /* Question */
-            font-size: 1.2rem;
-            color: var(--color-text-dark);
-            margin-bottom: 0.5rem;
+        .game-wrapper {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        /* Final CTA */
-        .final-cta {
-            background-color: var(--color-secondary); /* Darker shade or contrasting color */
-            color: var(--color-background-white);
+        .game-container {
+            width: 100%;
+            border: 3px solid #DAB785; 
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 200, 150, 0.3); 
+            position: relative;
+            background-color: #000; /* Canvas itself will have its art */
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        #score {
+            font-size: clamp(18px, 5vw, 24px); 
+            margin-bottom: 10px;
             text-align: center;
-            padding: 60px 20px;
+            color: white; /* Score text white */
         }
-        .final-cta h2 {
-            color: var(--color-background-white);
-            margin-bottom: 1rem;
-        }
-        .final-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        .final-cta .btn {
-             background-color: var(--color-accent); /* Example: Amber for standout CTA */
-             color: var(--color-text-dark); /* Or white if contrast is good */
-        }
-        .final-cta .btn:hover {
-            background-color: #FBBF24; /* Darker amber */
-        }
-        .offer-text {
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-        
-        /* Footer (simple) */
-        footer {
+        .controls-info {
+            font-size: clamp(10px, 3vw, 14px); 
+            margin-top: 10px;
+            margin-bottom: 20px; /* Space before leaderboard */
             text-align: center;
+            color: white; /* Controls info text white */
+        }
+        #gameOverScreen, #milestoneMessage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(40, 20, 30, 0.92); 
+            color: white;
             padding: 20px;
-            background-color: var(--color-text-dark);
-            color: var(--color-background-light);
-            font-size: 0.9rem;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid #FFB74D; 
         }
-        footer p { margin-bottom: 0;}
-
-        /* Utility classes */
-        .text-center { text-align: center; }
-        .mt-2 { margin-top: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-
-        /* Add media queries for responsiveness */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .hero { padding: 60px 20px; }
-            .steps-container { flex-direction: column; }
+        #gameOverScreen { display: none; }
+        #milestoneMessage {
+            display: none;
+            font-size: clamp(20px, 6vw, 28px);
+            padding: 20px 30px;
+            color: #FFA000; 
+            border-color: #FFA000;
+        }
+        #gameOverScreen h2 {
+            margin-top: 0;
+            font-size: clamp(22px, 6vw, 28px);
+            color: #FF7043; 
+        }
+        #finalScore {
+            font-size: clamp(18px, 5vw, 22px);
+            margin: 10px 0;
+            color: #FFDCC1; 
+        }
+        #restartButton {
+            background-color: #FF8A65; 
+            border: none;
+            color: #4E342E; 
+            padding: 12px 25px;
+            font-size: clamp(14px, 4vw, 18px);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            box-shadow: 0 3px #D84315; 
+            transition: all 0.1s ease;
+        }
+        #restartButton:active {
+            background-color: #FF7043; 
+            box-shadow: 0 1px #BF360C; 
+            transform: translateY(2px);
         }
 
+        /* Leaderboard Styles */
+        .leaderboard-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2); /* Subtle dark background */
+            border-radius: 8px;
+            width: 100%;
+            max-width: 380px; /* Align with game width */
+            box-sizing: border-box;
+        }
+        .leaderboard-container h3 {
+            font-size: clamp(16px, 4.5vw, 20px);
+            color: white;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        #leaderboardList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+        #leaderboardList li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: clamp(12px, 3.5vw, 16px);
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+        #leaderboardList li:last-child {
+            border-bottom: none;
+        }
+        #leaderboardList .name {
+            text-align: left;
+            flex-grow: 1;
+            margin-right: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #leaderboardList .score {
+            text-align: right;
+            min-width: 50px; /* Ensure scores align nicely */
+        }
     </style>
 </head>
 <body>
-
-    <header class="hero">
-        <div class="container">
-            <h1>STAND OUT & SELL MORE WITH EVERY GUEST CONVERSATION</h1>
-            <p>Transform Every Inquiry Into Revenue—No Matter Where It Starts</p>
-            <a href="#book-demo" class="btn">BOOK A DEMO</a>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">The Communication Challenge Holding Your Hotel Back</h2>
-            <p>Your competitors' generic responses, missed messages, and disconnected systems are costing them guests—and opportunities.</p>
-            <p>While they make guests wait hours for answers about your best rooms or struggle to coordinate between front desk emails and WhatsApp inquiries, something crucial gets lost: the personal touch that transforms first-time visitors into lifelong patrons.</p>
-            <p><strong>chatlyn unifies every guest conversation into one intelligent system</strong> that responds instantly in any language, across any channel, with knowledge specific to your property—turning communication from a burden into your strongest competitive advantage.</p>
-        </div>
-    </section>
-
-    <section class="section section-highlight">
-        <div class="container">
-            <h2 class="section-title">ELEVATE EVERY STAY, MAXIMIZE EVERY OPPORTUNITY</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Turn Inquiry Chaos Into 5-Star Reviews</h3>
-                    <h4>GUEST-JOURNEY AUTOMATION & OMNICHANNEL INBOX</h4>
-                    <p>Stop juggling between booking engine messages, emails, SMS, WhatsApp and missed calls. chatlyn brings every guest conversation into one seamless inbox for your team, with AI handling routine questions 24/7. Set up perfectly timed, personalized messages that guide guests from booking confirmation to post-stay thank you.</p>
-                    <p class="quote">"Our review scores increased by 22% within 90 days—guests consistently mention our 'incredible responsiveness' as a highlight of their stay."</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Transform Basic Bookings Into Premium Experiences</h3>
-                    <h4>AI-POWERED UPSELLING & ANCILLARY REVENUE</h4>
-                    <p>Automatically offer the right upgrades at the perfect moment—room enhancements, late checkout, dining reservations, or spa treatments—with secure in-conversation payments. chatlyn learns which offers resonate with different guest segments and optimizes timing for maximum conversion.</p>
-                    <p class="stat-highlight">+27% increase in ancillary revenue for hotels in the first 60 days</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Speak Your Guests' Language—All of Them</h3>
-                    <h4>CUSTOM-TRAINED AI & MULTILINGUAL SUPPORT</h4>
-                    <p>chatlyn integrates with your PMS and learns your specific room types, amenities, policies, and local attractions. Answer questions accurately in over 100 languages, even with typos or slang, providing instant responses that feel truly personalized—whether about your pet policy, parking options, or that hidden local coffee shop your guests love discovering.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Never Miss Another Opportunity to Impress</h3>
-                    <h4>VOICE & PHONE SUPPORT</h4>
-                    <p>Not every guest messages—chatlyn answers calls too, handling routine inquiries while intelligently routing complex questions to the right team member. Your phone becomes a revenue generator instead of a distraction, with complete conversation history preserved across all channels.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Build Loyalty That Lasts Beyond the Stay</h3>
-                    <h4>PERSONALIZED EXPERIENCES & FOLLOW-UP</h4>
-                    <p>Turn first-time guests into devoted regulars with customized recommendations, special occasion remembrance, and perfectly timed re-booking incentives. chatlyn's engine captures preferences and creates moments of delight that guests can't help but share.</p>
-                    <p class="stat-highlight">84% of chatlyn hotels see increased direct booking rates within the first year</p>
-                </div>
+    <h1 class="game-title">Chatlyn: The Parrot Game</h1>
+    <div class="game-wrapper">
+        <div id="score">Score: 0</div>
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="gameOverScreen">
+                <h2>Game Over!</h2>
+                <div id="finalScore">Your Score: 0</div>
+                <button id="restartButton">Restart</button>
             </div>
+            <div id="milestoneMessage">Level Up!</div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">TRUSTED BY 650+ INDEPENDENT HOTELS & BOUTIQUE GROUPS</h2>
-            <div class="testimonials">
-                <div class="testimonial-card">
-                    <p class="quote">"As a 5-property collection, we couldn't afford dedicated staff at each location for guest communications. chatlyn gives us enterprise-level service capacity with our existing team. Our guests think we've doubled our staff—we've actually reduced communication costs by 40%."</p>
-                    <p class="quote-author">— Maria Sanchez, Operations Director, Harbour View Hotel Group</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"The difference between us and the big chain hotel down the street? Their guests wait on hold. Mine get instant answers at 2 AM about local restaurants, then wake up to a perfectly timed text about our breakfast special—with a 68% conversion rate. That's chatlyn."</p>
-                    <p class="quote-author">— James Chen, Owner, The Westlake Boutique Hotel</p>
-                </div>
-            </div>
+        <div class="controls-info">Click or Press Space to Jump</div>
+        
+        <div class="leaderboard-container">
+            <h3>Top Scores</h3>
+            <ul id="leaderboardList">
+                </ul>
         </div>
-    </section>
-
-    <section class="section section-highlight">
-        <div class="container">
-            <h2 class="section-title">GET STARTED IN THREE SIMPLE STEPS</h2>
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h3>Connect Your Systems</h3>
-                    <p>Quick integration with your PMS and booking engine (15+ platforms supported)</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h3>Customize Your Experience</h3>
-                    <p>We'll help train chatlyn on your unique offerings and guest communication style</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h3>Go Live Across All Channels</h3>
-                    <p>Be up and running within 48 hours with full team training included</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h3>How accurate is the AI across different languages?</h3>
-                    <p>chatlyn's language processing achieves 98.7% accuracy across major languages and 95%+ in over 100 languages total. The system gets smarter with every interaction, and any unusual queries it can't handle are seamlessly escalated to your team.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How difficult is the integration with our existing systems?</h3>
-                    <p>We offer pre-built connectors for all major hotel PMS systems including Opera, Mews, Clock, Cloudbeds, and 15+ others. Most hotels are fully integrated within hours, not days, with dedicated implementation support included.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What about data privacy and security?</h3>
-                    <p>chatlyn is fully GDPR compliant with SOC 2 Type II certification. Guest data remains your property and is never used to train general AI models. All payment processing meets PCI DSS requirements with end-to-end encryption.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Will this reduce our staffing needs?</h3>
-                    <p>Rather than replacing staff, chatlyn empowers your existing team to focus on high-value guest interactions while eliminating repetitive tasks. Most hotels report being able to handle 3-4× more guest communications without adding headcount.</p>
-                </div>
-                 <div class="faq-item">
-                    <h3>How is pricing structured?</h3>
-                    <p>Pricing scales with your property size, starting at $7 per room per month with all features included. Volume discounts apply for multi-property groups, with no hidden fees or usage charges.</p>
-                </div>
-                 <div class="faq-item">
-                    <h3>Can we customize the AI's personality to match our brand voice?</h3>
-                    <p>Absolutely. During onboarding, we'll capture your unique brand voice and communication style. chatlyn will consistently represent your hotel's personality—whether that's warm and casual or refined and formal.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do guests know they're talking to AI?</h3>
-                    <p>This is your choice. chatlyn can identify itself as an AI assistant or seamlessly represent your brand without explicit disclosure. Either way, escalation to human staff is automatic for complex situations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container">
-            <h2>START YOUR FREE 14-DAY TRIAL TODAY</h2>
-            <p>NO CREDIT CARD REQUIRED</p>
-            <a href="#start-trial" class="btn">START FREE TRIAL</a>
-            <p class="offer-text">Limited Time Offer: Sign up this month and receive a complimentary strategy session with our hospitality revenue optimization specialist ($1,500 value).</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container" style="max-width: 700px;">
-            <p class="quote" style="font-size: 1.2rem; text-align:center; border-left: none;">"chatlyn paid for itself in the first month through room upgrades alone. Three months later, we've increased RevPAR by 18% while our competitors are still struggling."</p>
-            </div>
-    </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span> Chatlyn. All rights reserved. (Example Footer)</p>
-            </div>
-    </footer>
+    </div>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
 
+        const baseGameWidth = 320; 
+        const baseGameHeight = 480;
+        const detailFactor = 2; 
+
+        let gameWidth = baseGameWidth;
+        let gameHeight = baseGameHeight;
+        let scaleFactor = 1; 
+
+        let score = 0;
+        let baseGameSpeed = 1.5;
+        let gameSpeed = baseGameSpeed;
+        let gravity = 0.22; 
+        let jumpStrength = 4.8; 
+        let gamePlaying = false;
+        let frame = 0;
+        let animationFrameId = null;
+        let lastMilestoneScore = 0;
+
+        let parrotStableYCounter = 0;
+        let parrotPreviousY = 0;
+        const STABLE_Y_DURATION_FRAMES = 120;
+        const STABLE_Y_PIXEL_RANGE = 8; 
+
+        const beachLineYFactor = 1.0; 
+
+        const scoreDisplay = document.getElementById('score');
+        const gameOverScreen = document.getElementById('gameOverScreen');
+        const finalScoreDisplay = document.getElementById('finalScore');
+        const restartButton = document.getElementById('restartButton');
+        const milestoneMessageDisplay = document.getElementById('milestoneMessage');
+        const leaderboardList = document.getElementById('leaderboardList');
+
+        const LEADERBOARD_KEY = 'flappyParrotLeaderboard';
+        const MAX_LEADERBOARD_ENTRIES = 5;
+
+        function df(value) { 
+            return value * detailFactor;
+        }
+
+        function resizeCanvas() {
+            const gameContainer = document.querySelector('.game-container');
+            const containerWidth = gameContainer.clientWidth;
+            gameWidth = containerWidth;
+            gameHeight = (containerWidth / baseGameWidth) * baseGameHeight; 
+            canvas.width = gameWidth;
+            canvas.height = gameHeight;
+            scaleFactor = gameWidth / baseGameWidth; 
+            if (!gamePlaying) {
+                drawSceneWhenNotPlaying();
+            }
+        }
+        
+        function drawSceneWhenNotPlaying() {
+            drawBackground(); 
+            parrot.draw();    
+            ctx.fillStyle = "rgba(255, 230, 200, 0.9)";
+            ctx.font = `${16 * scaleFactor}px 'Press Start 2P'`; 
+            ctx.textAlign = "center";
+            if (gameOverScreen.style.display === 'none') {
+                 ctx.fillText("Click or Space to Start", gameWidth / 2, gameHeight / 2 + 60 * scaleFactor);
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        const parrotColors = { body: '#1ABC9C', beak: '#148F77', crest: '#FF69B4', eyeWhite: '#FFFFFF', eyePupil: '#000000', wingStripe: '#148F77' };
+        const parrot = {
+            baseWidth: 28, baseHeight: 24, baseX: 50, 
+            get width() { return this.baseWidth * scaleFactor; }, 
+            get height() { return this.baseHeight * scaleFactor; },
+            get x() { return this.baseX * scaleFactor; },          
+            y: gameHeight / 2, velocityY: 0, wingState: 0, wingAnimationSpeed: 10,
+            draw: function() {
+                const x = this.x; const y = this.y;
+                const w = this.width; const h = this.height;
+                const p = 1 * scaleFactor; 
+
+                ctx.fillStyle = parrotColors.body;
+                ctx.fillRect(x + p*4, y, w - p*8, h); 
+                ctx.fillRect(x, y + p*4, w, h - p*8); 
+                ctx.fillRect(x + p*2, y + p*2, p*2, p*2); 
+                ctx.fillRect(x + w - p*4, y + p*2, p*2, p*2); 
+                ctx.fillRect(x + p*2, y + h - p*4, p*2, p*2); 
+                ctx.fillRect(x + w - p*4, y + h - p*4, p*2, p*2); 
+                ctx.fillRect(x + w*0.3, y - p*2, w*0.4, p*4);
+                ctx.fillStyle = parrotColors.beak;
+                ctx.beginPath();
+                ctx.moveTo(x + w - p*2, y + h * 0.4);
+                ctx.lineTo(x + w + p*6, y + h * 0.5);
+                ctx.lineTo(x + w - p*2, y + h * 0.6);
+                ctx.closePath(); ctx.fill();
+                ctx.fillStyle = parrotColors.crest;
+                ctx.fillRect(x + w * 0.45, y - p*6, p*5, p*5); 
+                ctx.fillRect(x + w * 0.4, y - p*5, p*3, p*3); 
+                ctx.fillStyle = parrotColors.eyeWhite;
+                const eyeSize = p*8;
+                ctx.fillRect(x + w * 0.55, y + h * 0.25, eyeSize, eyeSize);
+                ctx.fillStyle = parrotColors.eyePupil;
+                ctx.fillRect(x + w * 0.60, y + h * 0.30, eyeSize*0.5, eyeSize*0.5);
+                ctx.fillStyle = parrotColors.wingStripe;
+                const wingW = w * 0.5; const wingH = h * 0.3; const wingX = x + w * 0.25;
+                if (this.wingState === 0) { 
+                    ctx.fillRect(wingX, y + h * 0.45, wingW, wingH);
+                    ctx.fillRect(wingX + wingW*0.2, y + h * 0.45 + wingH, wingW*0.6, p*4); 
+                } else { 
+                    ctx.fillRect(wingX, y + h * 0.35, wingW, wingH);
+                    ctx.fillRect(wingX + wingW*0.2, y + h * 0.35 - p*4, wingW*0.6, p*4); 
+                }
+            },
+            update: function() { 
+                this.velocityY += gravity * scaleFactor; 
+                this.y += this.velocityY;
+                if (frame % this.wingAnimationSpeed === 0) this.wingState = (this.wingState === 0) ? 1 : 0;
+                if (this.y < 0) { this.y = 0; this.velocityY = 0; }
+            },
+            flap: function() {
+                if (gameOverScreen.style.display === 'block') return;
+                if (!gamePlaying) startGame();
+                this.velocityY = -jumpStrength * scaleFactor; 
+            }
+        };
+
+        const hotels = [];
+        const baseHotelCellWidth_1x = 20; 
+        const baseMinHotelHeight_1x = baseGameHeight * 0.1;    
+        const baseMaxHotelHeight_1x = baseGameHeight * 0.65;   
+        const hotelSpawnInterval = 130;
+        const hotelColor = '#4E342E'; const hotelRoofColor = '#3E2723';
+        const hotelSignColor = '#D84315'; const hotelWindowColor = '#FFCC80';
+
+        function drawPixelHotel(hotel_draw_params) { 
+            const { x, y, width, height } = hotel_draw_params;
+            const p_hotel = detailFactor * scaleFactor; 
+            
+            ctx.fillStyle = hotelColor;
+            ctx.fillRect(x, y, width, height);
+            
+            const roofVisualHeight = df(8) * scaleFactor; 
+            ctx.fillStyle = hotelRoofColor;
+            ctx.fillRect(x - p_hotel, y, width + p_hotel*2, roofVisualHeight);
+            
+            ctx.fillRect(x, y, p_hotel*2, height); 
+            ctx.fillRect(x + width - p_hotel*2, y, p_hotel*2, height);
+
+            ctx.fillStyle = hotelWindowColor; 
+            const windowVisualSize = df(5) * scaleFactor; 
+            const windowVisualSpacing = df(3) * scaleFactor;
+            let windowAreaY = y + roofVisualHeight + windowVisualSpacing;
+            let windowAreaHeight = height - roofVisualHeight - windowVisualSpacing;
+            const numCols = Math.floor((width - windowVisualSpacing - p_hotel*4) / (windowVisualSize + windowVisualSpacing));
+            const numRows = Math.floor((windowAreaHeight - windowVisualSpacing) / (windowVisualSize + windowVisualSpacing));
+
+            if (numCols > 0 && numRows > 0) {
+                const totalWindowBlockWidth = numCols * windowVisualSize + (numCols - 1) * windowVisualSpacing;
+                const offsetX = (width - totalWindowBlockWidth) / 2;
+                for (let r = 0; r < numRows; r++) {
+                    for (let c = 0; c < numCols; c++) {
+                        if (x + offsetX + c * (windowVisualSize + windowVisualSpacing) + windowVisualSize <= x + width - p_hotel*2 && 
+                            x + offsetX + c * (windowVisualSize + windowVisualSpacing) >= x + p_hotel*2) {
+                           ctx.fillRect(x + offsetX + c * (windowVisualSize + windowVisualSpacing), windowAreaY + r * (windowVisualSize + windowVisualSpacing), windowVisualSize, windowVisualSize);
+                        }
+                    }
+                }
+            }
+            const signVisualWidth = df(16)*scaleFactor; 
+            const signVisualHeight = df(10)*scaleFactor;
+            const signX = x + (width - signVisualWidth)/2; 
+            const signY = y - signVisualHeight - df(2)*scaleFactor;
+            ctx.fillStyle = hotelSignColor; ctx.fillRect(signX, signY, signVisualWidth, signVisualHeight);
+            
+            ctx.fillStyle = '#FFF3E0'; 
+            ctx.font = `${df(8)*scaleFactor}px 'Press Start 2P'`; 
+            ctx.textAlign = "center"; ctx.textBaseline = "middle";
+            const h_pixel_size = p_hotel; 
+            ctx.fillRect(signX + h_pixel_size*2, signY + h_pixel_size*2, h_pixel_size*2, h_pixel_size*6);
+            ctx.fillRect(signX + h_pixel_size*6, signY + h_pixel_size*2, h_pixel_size*2, h_pixel_size*6);
+            ctx.fillRect(signX + h_pixel_size*4, signY + h_pixel_size*4, h_pixel_size*2, h_pixel_size*2);
+        }
+
+        function manageHotels() {
+            if (frame % hotelSpawnInterval === 0) {
+                const hotel_1x_logicalHeight = baseMinHotelHeight_1x + Math.random() * (baseMaxHotelHeight_1x - baseMinHotelHeight_1x);
+                const numCells = Math.floor(Math.random() * 3) + 2; 
+                const hotel_1x_logicalWidth = baseHotelCellWidth_1x * numCells;
+                
+                hotels.push({
+                    x_logic: baseGameWidth, 
+                    h_1x_logic: hotel_1x_logicalHeight, 
+                    w_1x_logic: hotel_1x_logicalWidth, 
+                    counted: false
+                });
+            }
+            for (let i = hotels.length - 1; i >= 0; i--) {
+                let h_obj = hotels[i]; 
+                h_obj.x_logic -= gameSpeed; 
+
+                const hotelDrawX = h_obj.x_logic * scaleFactor;
+                const hotelDrawHeight = h_obj.h_1x_logic * scaleFactor; 
+                const hotelDrawWidth = h_obj.w_1x_logic * scaleFactor;
+                const hotelDrawY = gameHeight - hotelDrawHeight;
+
+                drawPixelHotel({ x: hotelDrawX, y: hotelDrawY, width: hotelDrawWidth, height: hotelDrawHeight });
+                
+                if (parrot.x < hotelDrawX + hotelDrawWidth && parrot.x + parrot.width > hotelDrawX && parrot.y + parrot.height > hotelDrawY ) {
+                    gameOver(); return;
+                }
+                if (hotelDrawX + hotelDrawWidth < parrot.x && !h_obj.counted) {
+                    score++; scoreDisplay.textContent = `Score: ${score}`; h_obj.counted = true;
+                    checkMilestone();
+                }
+                if (hotelDrawX + hotelDrawWidth < 0) hotels.splice(i, 1);
+            }
+        }
+
+        const seagulls = [];
+        const baseSeagullWidth_1x = 17; 
+        const baseSeagullHeight_1x = 9;  
+        const seagullSpawnInterval = 180; 
+        const seagullSpeedFactor = 0.75;
+        const seagullBodyColor = '#FFFFFF'; const seagullWingColor = '#F0F0F0'; const seagullBeakColor = '#FFA726';
+
+        function drawPixelSeagull(s_draw) { 
+            const p_seagull = detailFactor * scaleFactor; 
+            const x = s_draw.x; const y = s_draw.y; const w = s_draw.width; const h = s_draw.height;
+            ctx.fillStyle = seagullBodyColor;
+            ctx.fillRect(x + p_seagull*2, y + h*0.2, w - p_seagull*4, h*0.6); 
+            ctx.fillRect(x + w - p_seagull*4, y + h*0.3, p_seagull*4, h*0.4); 
+            ctx.fillRect(x, y + h*0.3, p_seagull*4, h*0.4); 
+            ctx.fillStyle = seagullWingColor;
+            const wingSegmentHeight = h * 0.3; const wingOuterWidth = w * 0.45; const wingInnerWidth = w * 0.35;
+            if (s_draw.wingState === 0) { 
+                ctx.fillRect(x + w*0.1, y + h*0.5, wingOuterWidth, wingSegmentHeight); 
+                ctx.fillRect(x + w*0.5 - wingInnerWidth/2, y + h*0.4, wingInnerWidth, wingSegmentHeight); 
+            } else { 
+                ctx.fillRect(x + w*0.1, y, wingOuterWidth, wingSegmentHeight); 
+                ctx.fillRect(x + w*0.5 - wingInnerWidth/2, y + wingSegmentHeight*0.5, wingInnerWidth, wingSegmentHeight); 
+            }
+            ctx.fillStyle = seagullBeakColor; ctx.fillRect(x - p_seagull*3, y + h*0.4, p_seagull*3, p_seagull*2);
+        }
+
+        function manageSeagulls() {
+            if (frame % seagullSpawnInterval === 0 && Math.random() < 0.5) {
+                const logicalY_1x = (baseGameHeight * 0.05) + Math.random() * (baseGameHeight * 0.40);
+                seagulls.push({
+                    x_logic: baseGameWidth, y_1x_logic: logicalY_1x, 
+                    w_1x_logic: baseSeagullWidth_1x, h_1x_logic: baseSeagullHeight_1x, 
+                    wingState: 0, wingAnimationSpeed: 15, type: 'random'
+                });
+            }
+            if (gamePlaying) {
+                if (Math.abs(parrot.y - parrotPreviousY) < STABLE_Y_PIXEL_RANGE * scaleFactor) parrotStableYCounter++;
+                else parrotStableYCounter = 0;
+                parrotPreviousY = parrot.y;
+
+                if (parrotStableYCounter >= STABLE_Y_DURATION_FRAMES) {
+                    const targetY_1x_logic = (parrot.y + parrot.height/2) / scaleFactor; 
+                    seagulls.push({
+                        x_logic: baseGameWidth, 
+                        y_1x_logic: Math.max(0, Math.min(targetY_1x_logic - (baseSeagullHeight_1x/2), baseGameHeight - baseSeagullHeight_1x)), 
+                        w_1x_logic: baseSeagullWidth_1x, h_1x_logic: baseSeagullHeight_1x,
+                        wingState: 0, wingAnimationSpeed: 12, type: 'targetted'
+                    });
+                    parrotStableYCounter = 0; 
+                }
+            }
+
+            for (let i = seagulls.length - 1; i >= 0; i--) {
+                let s_obj = seagulls[i]; 
+                let currentSpeedFactor = (s_obj.type === 'targetted') ? seagullSpeedFactor * 1.2 : seagullSpeedFactor;
+                s_obj.x_logic -= gameSpeed * currentSpeedFactor; 
+                
+                if (frame % s_obj.wingAnimationSpeed === 0) s_obj.wingState = (s_obj.wingState === 0) ? 1 : 0;
+                
+                const s_draw = { 
+                    x: s_obj.x_logic * scaleFactor, 
+                    y: s_obj.y_1x_logic * scaleFactor, 
+                    width: df(s_obj.w_1x_logic) * scaleFactor, 
+                    height: df(s_obj.h_1x_logic) * scaleFactor, 
+                    wingState: s_obj.wingState
+                };
+                drawPixelSeagull(s_draw);
+
+                if (parrot.x < s_draw.x + s_draw.width && parrot.x + parrot.width > s_draw.x &&
+                    parrot.y < s_draw.y + s_draw.height && parrot.y + parrot.height > s_draw.y) {
+                    gameOver(); return;
+                }
+                if (s_draw.x + s_draw.width < 0) seagulls.splice(i, 1);
+            }
+        }
+        
+        const bgElements = []; const numBgElements = 8;
+        const bgElementTypes = ['palm1', 'palm2', 'rock1', 'rock2', 'bush1'];
+        const beachElementSilhouetteColor = '#4A312A'; 
+
+        function initBgElements() {
+            bgElements.length = 0;
+            for (let i = 0; i < numBgElements; i++) addRandomBgElement(Math.random() * baseGameWidth);
+        }
+        function addRandomBgElement(initialX_logic = baseGameWidth) {
+            const type = bgElementTypes[Math.floor(Math.random() * bgElementTypes.length)];
+            let baseW_1x, baseH_1x, drawFn; 
+
+            switch(type) { 
+                case 'palm1': baseW_1x = 10; baseH_1x = 70;
+                    drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; 
+                        ctx.fillRect(el_draw.x + p_scaled_df*3, el_draw.y - el_draw.height, p_scaled_df*4, el_draw.height); 
+                        for(let j=0; j<5; j++) ctx.fillRect(el_draw.x - p_scaled_df*10 + j*p_scaled_df*5, el_draw.y - el_draw.height - p_scaled_df*5 + Math.abs(j-2)*p_scaled_df*3, p_scaled_df*10, p_scaled_df*5); 
+                    }; break;
+                case 'palm2': baseW_1x = 15; baseH_1x = 50;
+                    drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; 
+                        ctx.fillRect(el_draw.x + p_scaled_df*4, el_draw.y - el_draw.height, p_scaled_df*7, el_draw.height); 
+                        ctx.fillRect(el_draw.x - p_scaled_df*8, el_draw.y - el_draw.height - p_scaled_df*3, p_scaled_df*30, p_scaled_df*12); 
+                        ctx.fillRect(el_draw.x - p_scaled_df*5, el_draw.y - el_draw.height + p_scaled_df*5, p_scaled_df*25, p_scaled_df*10); 
+                    }; break;
+                case 'rock1': baseW_1x = 12; baseH_1x = 8;
+                    drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; ctx.fillRect(el_draw.x, el_draw.y - el_draw.height, el_draw.width, el_draw.height); ctx.fillRect(el_draw.x+p_scaled_df*2, el_draw.y-el_draw.height-p_scaled_df*2, el_draw.width-p_scaled_df*4,p_scaled_df*2);}; break;
+                case 'rock2': baseW_1x = 18; baseH_1x = 12;
+                    drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; ctx.fillRect(el_draw.x, el_draw.y - el_draw.height, el_draw.width, el_draw.height); ctx.fillRect(el_draw.x+p_scaled_df*3, el_draw.y-el_draw.height-p_scaled_df*4, el_draw.width-p_scaled_df*6,p_scaled_df*4); ctx.fillRect(el_draw.x+p_scaled_df*5, el_draw.y-el_draw.height-p_scaled_df*6, el_draw.width-p_scaled_df*10,p_scaled_df*2);}; break;
+                case 'bush1': baseW_1x = 20; baseH_1x = 15;
+                    drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; ctx.fillRect(el_draw.x, el_draw.y - el_draw.height, el_draw.width, el_draw.height); ctx.fillRect(el_draw.x+p_scaled_df*2, el_draw.y-el_draw.height-p_scaled_df*3, el_draw.width-p_scaled_df*4,p_scaled_df*3); ctx.fillRect(el_draw.x+p_scaled_df*5, el_draw.y-el_draw.height-p_scaled_df*5, el_draw.width-p_scaled_df*10,p_scaled_df*2);}; break;
+            }
+            bgElements.push({
+                x_logic: initialX_logic, 
+                baseYFactor: beachLineYFactor, 
+                w_1x_logic: baseW_1x, h_1x_logic: baseH_1x, 
+                drawFn: drawFn
+            });
+        }
+        function manageBgElements() {
+            for (let i = bgElements.length - 1; i >= 0; i--) {
+                let el_obj = bgElements[i]; 
+                el_obj.x_logic -= gameSpeed; 
+                
+                const el_draw = {
+                    x: el_obj.x_logic * scaleFactor,
+                    y: gameHeight * el_obj.baseYFactor, 
+                    width: df(el_obj.w_1x_logic) * scaleFactor, 
+                    height: df(el_obj.h_1x_logic) * scaleFactor 
+                };
+                const p_scaled_df = detailFactor * scaleFactor;
+                el_obj.drawFn(el_draw, p_scaled_df);
+
+                if (el_draw.x + el_draw.width < 0) {
+                    bgElements.splice(i, 1);
+                    addRandomBgElement(baseGameWidth); 
+                }
+            }
+        }
+
+        const clouds = []; const numClouds = 4;
+        const cloudColors = ['rgba(255, 190, 120, 0.18)', 'rgba(255, 160, 100, 0.12)', 'rgba(255, 200, 130, 0.22)'];
+        function initClouds() {
+            clouds.length = 0;
+            for (let i = 0; i < numClouds; i++) {
+                clouds.push({
+                    x_logic: Math.random() * baseGameWidth, 
+                    y_logic: (baseGameHeight*0.1) + Math.random()*(baseGameHeight*0.35),
+                    w_1x_logic: 50 + Math.random()*50, 
+                    h_1x_logic: 20 + Math.random()*20, 
+                    speed: 0.1 + Math.random()*0.2,
+                    color: cloudColors[Math.floor(Math.random()*cloudColors.length)]
+                });
+            }
+        }
+        function drawCloud(cloud_draw) { 
+            const p_cloud_df = detailFactor * scaleFactor;
+            ctx.fillStyle = cloud_draw.color;
+            ctx.fillRect(cloud_draw.x, cloud_draw.y + p_cloud_df*5, cloud_draw.width, cloud_draw.height - p_cloud_df*10);
+            ctx.fillRect(cloud_draw.x + p_cloud_df*5, cloud_draw.y, cloud_draw.width - p_cloud_df*10, cloud_draw.height);
+            ctx.fillRect(cloud_draw.x + cloud_draw.width*0.2, cloud_draw.y - p_cloud_df*5, cloud_draw.width*0.6, p_cloud_df*10); 
+            ctx.fillRect(cloud_draw.x + cloud_draw.width*0.1, cloud_draw.y + cloud_draw.height - p_cloud_df*10, cloud_draw.width*0.8, p_cloud_df*10);
+        }
+        function updateClouds() {
+            clouds.forEach(cloud_obj => { 
+                cloud_obj.x_logic -= cloud_obj.speed * (gameSpeed * 0.25) ; 
+                if (cloud_obj.x_logic * scaleFactor + df(cloud_obj.w_1x_logic) * scaleFactor < 0) {
+                    cloud_obj.x_logic = baseGameWidth + Math.random()* df(50); 
+                    cloud_obj.y_logic = (baseGameHeight*0.1) + Math.random()*(baseGameHeight*0.35);
+                }
+                const cloud_draw = {
+                    x: cloud_obj.x_logic * scaleFactor, y: cloud_obj.y_logic * scaleFactor,
+                    width: df(cloud_obj.w_1x_logic) * scaleFactor, 
+                    height: df(cloud_obj.h_1x_logic) * scaleFactor, 
+                    color: cloud_obj.color
+                };
+                drawCloud(cloud_draw);
+            });
+        }
+
+        function drawBackground() {
+            const skyGradient = ctx.createLinearGradient(0,0,0, gameHeight * 0.75);
+            skyGradient.addColorStop(0, '#FFB74D'); skyGradient.addColorStop(0.35, '#FF8A65');
+            skyGradient.addColorStop(0.65, '#FF7043'); skyGradient.addColorStop(1, '#BF360C');
+            ctx.fillStyle = skyGradient; ctx.fillRect(0,0,gameWidth,gameHeight * 0.75);
+
+            const sunX = gameWidth*0.65; const sunY = gameHeight*0.35; 
+            const sunBaseRadius_1x = 25; 
+            const sunRadiusDraw = df(sunBaseRadius_1x) * scaleFactor; 
+            ctx.fillStyle = '#FFF3E0'; ctx.beginPath(); ctx.arc(sunX, sunY, sunRadiusDraw, 0, Math.PI*2); ctx.fill();
+            ctx.fillStyle = 'rgba(255,224,189,0.5)'; ctx.beginPath(); ctx.arc(sunX, sunY, sunRadiusDraw*1.5, 0, Math.PI*2); ctx.fill();
+            
+            updateClouds();
+
+            ctx.fillStyle = '#6D4C41'; ctx.beginPath(); 
+            ctx.moveTo(0, gameHeight*0.72);
+            ctx.lineTo(gameWidth*0.25, gameHeight*0.60); ctx.lineTo(gameWidth*0.55, gameHeight*0.65);
+            ctx.lineTo(gameWidth*0.85, gameHeight*0.58); ctx.lineTo(gameWidth, gameHeight*0.68);
+            ctx.lineTo(gameWidth, gameHeight*0.75); ctx.lineTo(0, gameHeight*0.75);
+            ctx.closePath(); ctx.fill();
+            ctx.fillStyle = '#4E342E'; ctx.beginPath();
+            ctx.moveTo(0, gameHeight*0.75);
+            ctx.lineTo(gameWidth*0.2, gameHeight*0.67); ctx.lineTo(gameWidth*0.5, gameHeight*0.72);
+            ctx.lineTo(gameWidth*0.8, gameHeight*0.65); ctx.lineTo(gameWidth, gameHeight*0.74);
+            ctx.lineTo(gameWidth, gameHeight*0.75); ctx.lineTo(0, gameHeight*0.75);
+            ctx.closePath(); ctx.fill();
+
+            const waterStartY = gameHeight*0.73; 
+            const waterGradient = ctx.createLinearGradient(0,waterStartY,0,gameHeight);
+            waterGradient.addColorStop(0,'#FFB74D'); waterGradient.addColorStop(0.3,'#FF8A65');
+            waterGradient.addColorStop(0.7,'#BF360C'); waterGradient.addColorStop(1,'#795548');
+            ctx.fillStyle = waterGradient; ctx.fillRect(0,waterStartY,gameWidth,gameHeight-waterStartY);
+
+            ctx.fillStyle = 'rgba(255,243,224,0.3)';
+            const reflectionYStart = sunY + sunRadiusDraw*0.8; 
+            const reflectionWidthBase = sunRadiusDraw*1.2;
+            const numReflectionLines = detailFactor * 2; 
+            const reflectionLineHeight = df(1) * scaleFactor; 
+            const reflectionLineSpacing = df(2) * scaleFactor; 
+
+            for(let i=0; i < numReflectionLines; i++){ 
+                let y = reflectionYStart + i * reflectionLineSpacing; 
+                if(y > gameHeight * (beachLineYFactor - 0.02) || y < waterStartY) continue; 
+                let currentWidth = reflectionWidthBase * (1-(i/(numReflectionLines * 1.5))) * (Math.random()*0.1+0.9);
+                ctx.fillRect(sunX - currentWidth/2, y, currentWidth, reflectionLineHeight); 
+            }
+        }
+
+        function checkMilestone() {
+            if (score > 0 && score % 10 === 0 && score !== lastMilestoneScore) {
+                lastMilestoneScore = score; gameSpeed += 0.15;
+                milestoneMessageDisplay.style.display = 'block';
+                setTimeout(() => { milestoneMessageDisplay.style.display = 'none'; }, 1500);
+            }
+        }
+
+        // --- Leaderboard Functions ---
+        function getLeaderboard() {
+            const board = localStorage.getItem(LEADERBOARD_KEY);
+            return board ? JSON.parse(board) : [];
+        }
+
+        function saveLeaderboard(board) {
+            localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(board));
+        }
+
+        function displayLeaderboard() {
+            const board = getLeaderboard();
+            leaderboardList.innerHTML = ''; // Clear previous entries
+            if (board.length === 0) {
+                const li = document.createElement('li');
+                li.textContent = "No scores yet!";
+                li.style.textAlign = "center";
+                leaderboardList.appendChild(li);
+                return;
+            }
+            board.forEach((entry, index) => {
+                const li = document.createElement('li');
+                const rankSpan = document.createElement('span');
+                rankSpan.textContent = `${index + 1}. `;
+                rankSpan.style.marginRight = "5px";
+
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'name';
+                nameSpan.textContent = entry.name;
+
+                const scoreSpan = document.createElement('span');
+                scoreSpan.className = 'score';
+                scoreSpan.textContent = entry.score;
+                
+                li.appendChild(rankSpan);
+                li.appendChild(nameSpan);
+                li.appendChild(scoreSpan);
+                leaderboardList.appendChild(li);
+            });
+        }
+
+        function checkAndAddScoreToLeaderboard(currentScore) {
+            const board = getLeaderboard();
+            const lowestTopScore = board.length < MAX_LEADERBOARD_ENTRIES ? 0 : board[MAX_LEADERBOARD_ENTRIES - 1].score;
+
+            if (currentScore > lowestTopScore) {
+                let playerName = prompt(`New high score: ${currentScore}! Enter your name (max 10 chars):`, "ParrotLover");
+                if (playerName) {
+                    playerName = playerName.substring(0, 10); // Truncate name
+                    board.push({ name: playerName, score: currentScore });
+                    board.sort((a, b) => b.score - a.score); // Sort descending
+                    if (board.length > MAX_LEADERBOARD_ENTRIES) {
+                        board.pop(); // Remove lowest score if board is full
+                    }
+                    saveLeaderboard(board);
+                }
+            }
+            displayLeaderboard(); // Update display regardless of new entry
+        }
+        // --- End Leaderboard Functions ---
+
+
+        function gameLoop() {
+            drawBackground(); 
+            manageBgElements(); 
+            if (gamePlaying) {
+                parrot.update(); manageHotels(); manageSeagulls(); frame++;
+            }
+            parrot.draw();
+            if (parrot.y + parrot.height >= gameHeight) {
+                if (gamePlaying) gameOver();
+                parrot.y = gameHeight - parrot.height; parrot.velocityY = 0;
+            }
+            if (gamePlaying) animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        function gameOver() {
+            if (!gamePlaying) return; gamePlaying = false;
+            if (animationFrameId) cancelAnimationFrame(animationFrameId); animationFrameId = null;
+            finalScoreDisplay.textContent = `Your Score: ${score}`;
+            gameOverScreen.style.display = 'block';
+            checkAndAddScoreToLeaderboard(score); // Check leaderboard on game over
+        }
+
+        function startGame() {
+            gamePlaying = true; score = 0; frame = 0; lastMilestoneScore = 0;
+            gameSpeed = baseGameSpeed;
+            parrot.y = gameHeight/2 - parrot.height/2; parrot.velocityY = 0;
+            parrotStableYCounter = 0; parrotPreviousY = parrot.y;
+            hotels.length = 0; seagulls.length = 0;
+            initClouds(); initBgElements();
+            scoreDisplay.textContent = `Score: ${score}`;
+            gameOverScreen.style.display = 'none'; milestoneMessageDisplay.style.display = 'none';
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            gameLoop();
+        }
+
+        canvas.addEventListener('click', function() {
+            console.log("Canvas clicked!"); 
+            parrot.flap();
+        });
+        document.addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); parrot.flap(); } });
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); parrot.flap(); }, { passive: false });
+        restartButton.addEventListener('click', (e) => { e.stopPropagation(); startGame(); });
+
+        window.onload = () => {
+            resizeCanvas(); 
+            displayLeaderboard(); // Initial display of leaderboard
+        };
+    </script>
 </body>
 </html>
