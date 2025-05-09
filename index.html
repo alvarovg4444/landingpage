@@ -250,7 +250,7 @@
         }
         window.addEventListener('resize', resizeCanvas);
 
-        const parrotColors = { body: '#1ABC9C', beak: '#148F77', crest: '#FF69B4', eyeWhite: '#FFFFFF', eyePupil: '#000000', wingStripe: '#148F77' };
+        const parrotColors = { body: '#1ABC9C', beak: '#117A65', crest: '#FF69B4', eyeWhite: '#FFFFFF', eyePupil: '#000000', wingStripe: '#148F77' };
         const parrot = {
             baseWidth: 28, baseHeight: 24, baseX: 50, 
             get width() { return this.baseWidth * scaleFactor; }, 
@@ -260,8 +260,9 @@
             draw: function() {
                 const x = this.x; const y = this.y;
                 const w = this.width; const h = this.height;
-                const p = 1 * scaleFactor; 
+                const p = 1 * scaleFactor; // Smallest pixel unit for this 1x parrot, scaled by responsive factor
 
+                // Rounded Body Core
                 ctx.fillStyle = parrotColors.body;
                 ctx.fillRect(x + p*4, y, w - p*8, h); 
                 ctx.fillRect(x, y + p*4, w, h - p*8); 
@@ -270,12 +271,21 @@
                 ctx.fillRect(x + p*2, y + h - p*4, p*2, p*2); 
                 ctx.fillRect(x + w - p*4, y + h - p*4, p*2, p*2); 
                 ctx.fillRect(x + w*0.3, y - p*2, w*0.4, p*4);
+                
+                // --- New Beak Drawing ---
                 ctx.fillStyle = parrotColors.beak;
-                ctx.beginPath();
-                ctx.moveTo(x + w - p*2, y + h * 0.4);
-                ctx.lineTo(x + w + p*6, y + h * 0.5);
-                ctx.lineTo(x + w - p*2, y + h * 0.6);
-                ctx.closePath(); ctx.fill();
+                // Base of the beak (wider part connected to face)
+                ctx.fillRect(x + w - p*4, y + h * 0.35, p*6, p*6); 
+                // Middle part, slightly tapering
+                ctx.fillRect(x + w + p*2, y + h * 0.4, p*4, p*4); 
+                // Tip of the beak (more pointed)
+                ctx.fillRect(x + w + p*6, y + h * 0.45, p*2, p*2); 
+                // Slight curve on top
+                ctx.fillRect(x + w - p*2, y + h * 0.3, p*6, p*2);
+                // Slight curve on bottom
+                ctx.fillRect(x + w - p*2, y + h * 0.35 + p*6, p*6, p*2);
+                // --- End New Beak Drawing ---
+
                 ctx.fillStyle = parrotColors.crest;
                 ctx.fillRect(x + w * 0.45, y - p*6, p*5, p*5); 
                 ctx.fillRect(x + w * 0.4, y - p*5, p*3, p*3); 
@@ -405,6 +415,7 @@
         const seagullSpawnInterval = 180; 
         const seagullSpeedFactor = 0.75;
         const seagullBodyColor = '#FFFFFF'; const seagullWingColor = '#F0F0F0'; const seagullBeakColor = '#FFA726';
+        const seagullEyeColor = '#000000'; 
 
         function drawPixelSeagull(s_draw) { 
             const p_seagull = detailFactor * scaleFactor; 
@@ -423,6 +434,10 @@
                 ctx.fillRect(x + w*0.5 - wingInnerWidth/2, y + wingSegmentHeight*0.5, wingInnerWidth, wingSegmentHeight); 
             }
             ctx.fillStyle = seagullBeakColor; ctx.fillRect(x - p_seagull*3, y + h*0.4, p_seagull*3, p_seagull*2);
+            
+            ctx.fillStyle = seagullEyeColor;
+            const eyeSize = p_seagull * 1.5; 
+            ctx.fillRect(x + p_seagull*1.5, y + h*0.35, eyeSize, eyeSize);
         }
 
         function manageSeagulls() {
@@ -488,12 +503,12 @@
             let baseW_1x, baseH_1x, drawFn; 
 
             switch(type) { 
-                case 'palm1': baseW_1x = 10; baseH_1x = 70;
+                case 'palm1': baseW_1x = 10; baseH_1x = 85; 
                     drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; 
                         ctx.fillRect(el_draw.x + p_scaled_df*3, el_draw.y - el_draw.height, p_scaled_df*4, el_draw.height); 
                         for(let j=0; j<5; j++) ctx.fillRect(el_draw.x - p_scaled_df*10 + j*p_scaled_df*5, el_draw.y - el_draw.height - p_scaled_df*5 + Math.abs(j-2)*p_scaled_df*3, p_scaled_df*10, p_scaled_df*5); 
                     }; break;
-                case 'palm2': baseW_1x = 15; baseH_1x = 50;
+                case 'palm2': baseW_1x = 15; baseH_1x = 65; 
                     drawFn = (el_draw, p_scaled_df) => { ctx.fillStyle = beachElementSilhouetteColor; 
                         ctx.fillRect(el_draw.x + p_scaled_df*4, el_draw.y - el_draw.height, p_scaled_df*7, el_draw.height); 
                         ctx.fillRect(el_draw.x - p_scaled_df*8, el_draw.y - el_draw.height - p_scaled_df*3, p_scaled_df*30, p_scaled_df*12); 
